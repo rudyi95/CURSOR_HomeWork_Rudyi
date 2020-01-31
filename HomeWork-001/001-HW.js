@@ -15,7 +15,7 @@ summOfPrices = Nokia + Samsung + Apple;
 summOfPricesFloor = Math.floor(Nokia) + Math.floor(Samsung) + Math.floor(Apple);
 
 // 5)
-summOfPricesFix = summOfPrices.toFixed(1);
+summOfPricesFix = Math.ceil(summOfPrices/100)*100;
 
 // 6)
 summOfPricesBool = summOfPricesFloor;
