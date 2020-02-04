@@ -42,7 +42,7 @@ averagePrice = (summOfPrices/3).toFixed(2);
 randomDiscount = randomDiscount.toFixed();
 priceWithDiscount = summOfPrices - (randomDiscount/100 * summOfPrices);
 cost = summOfPrices/2;
-netProfit = cost - priceWithDiscount;
+netProfit = cost - (randomDiscount/100 * summOfPrices);
 
 console.log(`
 Max price is: ${maxPrice} , 
