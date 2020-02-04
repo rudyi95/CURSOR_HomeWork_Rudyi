@@ -1,6 +1,7 @@
 const Nokia = 15.678, Samsung = 90.2345, Apple = 123.965;
 let maxPrice, minPrice, summOfPrices, summOfPricesFloor, summOfPricesFix, summOfPricesBool, a, remainder, remainderA, 
-clientPay = 500, averagePrice, randomDiscount = Math.random(), someGood = 0, priceWithDiscount, lostProfit;
+clientPay = 500, averagePrice, randomDiscount = Math.random()*100, priceWithDiscount, netProfit, 
+discountOnGood, cost;
 
 // 1)
 maxPrice = Math.max(Nokia,Samsung,Apple);
@@ -12,7 +13,7 @@ minPrice = Math.min(Nokia,Samsung,Apple);
 summOfPrices = Nokia + Samsung + Apple;
 
 // 4)
-summOfPricesFloor = Math.floor(Nokia) + Math.floor(Samsung) + Math.floor(Apple);
+summOfPricesFloor = Math.floor(summOfPrices);
 
 // 5)
 summOfPricesFix = Math.ceil(summOfPrices/100)*100;
@@ -38,9 +39,10 @@ if(summOfPrices <= clientPay){
 averagePrice = (summOfPrices/3).toFixed(2);
 
 // 9)
-someGood = prompt("Write price of your good!", someGood);
-priceWithDiscount = someGood - randomDiscount;
-lostProfit = someGood / 2 - randomDiscount;
+randomDiscount = randomDiscount.toFixed();
+priceWithDiscount = summOfPrices - (randomDiscount/100 * summOfPrices);
+cost = summOfPrices/2;
+netProfit = cost - priceWithDiscount;
 
 console.log(`
 Max price is: ${maxPrice} , 
@@ -51,5 +53,8 @@ Summ of prices fixed: ${summOfPricesFix},
 Summ of prices is: ${a},
 ${remainderA},
 Average price: ${averagePrice},
-Lost profit: ${lostProfit}
+Random discount: ${randomDiscount}% ,
+To pay with discount: ${priceWithDiscount.toFixed(2)},
+Cost: ${cost},
+Net profit: ${netProfit}
 `);
