@@ -3,16 +3,13 @@
 //1)
 function getMaxDigit(number){
     number = number.toString();
-    let five = '5';
-    let fives = 2;
-    let res = five * fives;
     let maxDigit = 0;
     for (let i = 0; i < number.length; i++) {
         if(maxDigit < number[i]){
             maxDigit = number[i];
         }
     }
-    return number + ' => ' + maxDigit+ ' - ' + res;
+    return number + ' => ' + maxDigit;
 }
 //2)
 function power(number, numPow){
