@@ -31,6 +31,7 @@ function studentsMarks(students, marks) {
     return studentsAndMarks;
 
 }
+const studentsWithMarks = studentsMarks(students, marks);
 
 function randomPairsMarks(studentsAndThemes) {
     const pairsAndMarks = [];
@@ -42,14 +43,16 @@ function randomPairsMarks(studentsAndThemes) {
     return pairsAndMarks;
 }
 
+const pairsWithRandomMarks = randomPairsMarks(studentsAndThemes);
+
 
 document.write(`
 <br><br>
 <b>Список студентів:</b> <u>${students}</u> <br>
 <b>Список тем:</b> <u>${themes}</u> <br>
 <b>Оцінки:</b> <u>${marks}</u> <br><br><br>
-1)<b>Студенти поділені на пари:</b> ${pairsOfStudents(students).join(" , ")} <br><br>
-2)<b>Студенти та їх теми:</b> ${studentsThemes(pairs, themes)} <br><br>
-3)<b>Оцінки студентів:</b> ${studentsMarks(students, marks)} <br><br>
-4)<b>Оцінка пари студентів:</b> ${randomPairsMarks(studentsAndThemes).join(" , ")}
+1)<b>Студенти поділені на пари:</b> ${pairs.join(" , ")} <br><br>
+2)<b>Студенти та їх теми:</b> ${studentsAndThemes} <br><br>
+3)<b>Оцінки студентів:</b> ${studentsWithMarks} <br><br>
+4)<b>Оцінка пари студентів:</b> ${pairsWithRandomMarks.join(" , ")}
 `);
