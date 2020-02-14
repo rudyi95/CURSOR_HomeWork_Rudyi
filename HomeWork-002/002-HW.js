@@ -1,21 +1,62 @@
 let numberN, numberM, verN, verM, verIntN, verIntM, missNum, numbers = 0, answer;
 
+//1)
 numberN = prompt("Write number N ", 1);
-verN = +numberN;
-while(isNaN(verN)){
-    numberN = prompt("Write number N again", );
-    verN = +numberN;
-}
-verIntN = Number.isInteger(verN);
 
+if(numberN == null){
+    numberN = 'sda';
+    alert("You clicked cancel!");
+}else if(numberN == ''){
+    numberN = 'sda'
+    alert("You didn't write anything!");
+}
+
+verN = +numberN;
+    while(!Number.isInteger(verN)){
+        alert("Write integer please!!!");
+        numberN = prompt("Write number N again", 1);
+
+        if(numberN == null){
+            numberN = 'sda';
+            alert("You clicked cancel!");
+        }else if(numberN == ''){
+            numberN = 'sda'
+            alert("You didn't write anything!");
+        }
+        verN = +numberN;
+    }
+
+/*-------------------------------------------------------*/
+
+//2)
 numberM = prompt("Write number M ", 10);
+
+if(numberM == null){
+    numberM = 'sda';
+    alert("You clicked cancel!");
+}else if(numberM == ''){
+    numberM = 'sda'
+    alert("You didn't write anything!");
+}
+
 verM = +numberM;
-while(isNaN(verM)){
-    numberM = prompt("Write number M again", );
+while(!Number.isInteger(verM)){
+    alert("Write integer please!!!");
+    numberM = prompt("Write number M again", 10);
+
+    if(numberM == null){
+        numberM = 'sda';
+        alert("You clicked cancel!");
+    }else if(numberM == ''){
+        numberM = 'sda'
+        alert("You didn't write anything!");
+    }
     verM = +numberM;
 }
-verIntM = Number.isInteger(verM);
 
+/*-------------------------------------------------------*/
+
+//3)
 missNum = confirm("Miss even numbers? ");
 if(missNum == true){
     answer = "YES!";
@@ -33,7 +74,9 @@ if(missNum == false){
             }
         }
     }
-    
+
+
+/*-------------------------------------------------------*/
 document.write(`
 Number N: ${numberN} </br>
 Number M: ${numberM} </br>
