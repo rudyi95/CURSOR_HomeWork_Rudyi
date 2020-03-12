@@ -7,15 +7,14 @@ function getRandomColor(){
     return colorRes;
 }
 document.addEventListener('keypress', function(event){
-    let button = document.getElementById(event.key.toUpperCase());
-    console.log('button: ', button);
+    let button = document.getElementById(event.code);
     button.style.border = `5px ${getRandomColor()} solid`;
-    let music = document.getElementById(`${button.id}-sound`);
+    let music = document.getElementById(`${event.code}-sound`);
     music.currentTime = 0;
     music.play();
 })
 document.addEventListener('click', function(event){
-    let button = document.getElementById(event.srcElement.id.toUpperCase());
+    let button = document.getElementById(event.srcElement.id);
     button.style.border = `5px ${getRandomColor()} solid`;
     let music = document.getElementById(`${button.id}-sound`);
     music.currentTime = 0;
