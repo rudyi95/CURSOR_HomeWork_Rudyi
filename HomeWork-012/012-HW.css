@@ -1,0 +1,102 @@
+
+body{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    flex-direction: column;
+    background-image: url('./image/milky-way-2695569_1920.jpg');
+    background-size: 100%;
+    color: white;
+    min-width: 350px;
+    
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 25vh;
+    border: 1px white solid;
+}
+#inputBlock{
+    width: 35vw;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+#arrows{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#names{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 45px;
+    
+}
+#names_left{
+    width: 50%;
+    padding-left: 8vw;
+}
+#names_right{
+    width: 50%;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.planets{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
+    height: 100%;
+
+}
+.planets div{
+    width: auto;
+    margin-top: 15px;
+    margin-left: 5vw;
+    text-align: start;
+}
+
+.container{
+    width: 70%;
+    height: 60vh;
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    overflow: scroll;
+    overflow-x:hidden;
+    border-left: 1px white solid;
+}
+
+
+.container div{
+    min-width: 175px;
+    width: 20%;
+    margin-left: 90px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px white solid;
+}
+
+
+p{
+    min-width: 162px;
+    display: flex;
+    justify-content: flex-start;
+    width: 20vw;
+}
+
