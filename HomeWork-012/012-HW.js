@@ -9,12 +9,36 @@ left.addEventListener("click",function(){
     if(currPage!=1){
         currPage--;
         getPlanets(currPage).then(showPlanets);
+        if(currPage == 1){
+            document.getElementById('left').style.visibility = 'hidden';
+        }else{
+            document.getElementById('left').style.visibility = 'visible';
+        }
+        
+        if(currPage == 6){
+            document.getElementById('right').style.visibility = 'hidden';
+        }else{
+            document.getElementById('right').style.visibility = 'visible';
+        }
+        
     }
 })
+
 right.addEventListener("click",function(){
     if(currPage!=6){
         currPage++;
         getPlanets(currPage).then(showPlanets);
+        if(currPage == 1){
+            document.getElementById('left').style.visibility = 'hidden';
+        }else{
+            document.getElementById('left').style.visibility = 'visible';
+        }
+        
+        if(currPage == 6){
+            document.getElementById('right').style.visibility = 'hidden';
+        }else{
+            document.getElementById('right').style.visibility = 'visible';
+        }
     }
 })
 getPlanets().then(showPlanets);
@@ -27,7 +51,6 @@ function onClick(){
         container.innerHTML='';
         const res = await axios.get(API+"films/"+episode.value+"/");
         episode.value='';
-        console.log(res.data);
         resolve(res.data.characters);
     });
     promise.then(people=>{
@@ -38,6 +61,7 @@ function onClick(){
             div.innerHTML=`
             
             <p>
+               <img src="./image/${result.data.name}.png" alt="">
                name: ${result.data.name} <br>
                birth: ${result.data.birth_year}<br>
                male: ${result.data.gender}
