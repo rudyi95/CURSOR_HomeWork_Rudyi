@@ -105,6 +105,8 @@ main{
     margin-top: 15px;
     width: 100%;
     height: auto;
+    background: black;
+    opacity: 0.7;
 }
 .planets{
     display: flex;
@@ -112,7 +114,6 @@ main{
     flex-wrap: wrap;
     width: auto;
     height: 100%;
-
 }
 .planets div{
     width: auto;
