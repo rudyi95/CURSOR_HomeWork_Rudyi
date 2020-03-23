@@ -1,10 +1,10 @@
 const API = 'https://swapi.co/api/';
 let button = document.getElementById('button');
-let chekedFilm = document.getElementById('films');
 let container = document.querySelector('.container');
 let left = document.querySelector(".left");
 let right = document.querySelector(".right");
-button.addEventListener('click', onClick);
+let currPage=1;
+
 left.addEventListener("click",function(){
     if(currPage!=1){
         currPage--;
@@ -41,12 +41,8 @@ right.addEventListener("click",function(){
         }
     }
 })
-getPlanets().then(showPlanets);
-let currPage=1;
 
-
-
-function onClick(){
+button.addEventListener('click', function getFilmPersons(){
     let promise = new Promise(async function(resolve,reject){
         container.innerHTML='';
         const res = await axios.get(API+"films/"+episode.value+"/");
@@ -61,7 +57,7 @@ function onClick(){
             div.innerHTML=`
             
             <p>
-               <img src="./image/${result.data.name}.png" alt="">
+            <img src="./image/${result.data.name}.png" alt="">
                name: ${result.data.name} <br>
                birth: ${result.data.birth_year}<br>
                male: ${result.data.gender}
@@ -70,7 +66,8 @@ function onClick(){
             container.append(div);
         });
     })
-}
+});
+
 async function getPlanets(currPage=1){
     let config = {
         params :{
@@ -80,6 +77,7 @@ async function getPlanets(currPage=1){
     const planets = await axios.get(API+`planets/`,config);
     return planets.data.results;
 }
+
 function showPlanets(planets){
     let div = document.querySelector(".planets");
     let count = 1;
@@ -92,5 +90,7 @@ function showPlanets(planets){
     })
     div.append(div);
 }
+
+getPlanets().then(showPlanets);
 
 
