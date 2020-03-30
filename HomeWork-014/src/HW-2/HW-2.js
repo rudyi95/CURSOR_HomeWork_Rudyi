@@ -8,4 +8,3 @@ export default function getMaxDigit(number){
     }
     return number + ' => ' + maxDigit;
 }
-

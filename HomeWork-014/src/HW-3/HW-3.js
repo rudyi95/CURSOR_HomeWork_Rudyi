@@ -1,4 +1,3 @@
-
 let students = ["Саша", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
 function pairsOfStudents(students) {  
     return `
